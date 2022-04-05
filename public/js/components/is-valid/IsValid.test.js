@@ -98,16 +98,16 @@ describe("IsValid.email()", () => {
     expect(err).toBe(true);
     expect(status).toBe("Negali buti maziau nei 6 ir daugiau nei 87 simboliu");
   });
-  // test('no @ symbol', () => {
-  //     const [err, status] = IsValid.email('usernamemail.com');
-  //     expect(err).toBe(true);
-  //     expect(status).toBe('Truksta @ simbolio');
-  // })
-  // test('no local part', () => {
-  //     const [err, status] = IsValid.email('@mail.com');
-  //     expect(err).toBe(true);
-  //     expect(status).toBe('Truksta dalies pries @ simboli');
-  // })
+  test("no @ symbol", () => {
+    const [err, status] = IsValid.email("usernamemail.com");
+    expect(err).toBe(true);
+    expect(status).toBe("Truksta @ simbolio");
+  });
+  test("no local part", () => {
+    const [err, status] = IsValid.email("@mail.com");
+    expect(err).toBe(true);
+    expect(status).toBe("Truksta dalies pries @ simboli");
+  });
   // test('no domain part', () => {
   //     const [err, status] = IsValid.email('username@');
   //     expect(err).toBe(true);
@@ -194,5 +194,17 @@ describe("IsValid.password()", () => {
     );
     expect(err).toBe(true);
     expect(status).toBe("Negali buti maziau nei 8 ir daugiau nei 100 simboliu");
+  });
+
+  //mano
+  test("no @ symbol", () => {
+    const [err, status] = IsValid.email("usernamemail.com");
+    expect(err).toBe(true);
+    expect(status).toBe("Truksta @ simbolio");
+  });
+  test("no local part", () => {
+    const [err, status] = IsValid.email("@mail.com");
+    expect(err).toBe(true);
+    expect(status).toBe("Truksta dalies pries @ simboli");
   });
 });
