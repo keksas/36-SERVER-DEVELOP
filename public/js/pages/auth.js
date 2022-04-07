@@ -50,7 +50,7 @@ submitDOM.addEventListener("click", (e) => {
         console.log(data);
       }
     };
-    xhttp.open("GET", "/api", true);
-    xhttp.send();
+    xhttp.open("POST", formDOM.action, true);
+    xhttp.send(JSON.stringify(formData));
   }
 });
